@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json.schemastore.org/vss-extension",
+  "id": "open-security-toolkit",
+  "name": "Open Security Toolkit",
+  "manifestVersion": 1,
+  "version": "1.0.7",
+  "publisher": "dzhukovsky",
+  "public": false,
+  "author": "Dmitry Zhukovsky",
+  "description": "Azure DevOps Extension",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "demands": ["api-version/3.0"],
+  "icons": {
+    "default": "icon.png"
+  },
+  "scopes": ["vso.build_execute"],
+  "categories": ["Azure Pipelines"],
+  "tags": ["Preview"],
+  "content": {
+    "details": {
+      "path": "README.md"
+    },
+    "license": {
+      "path": "LICENSE"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/dzhukovsky/open-security-toolkit"
+  },
+  "contributions": [
+    {
+      "id": "security-tab",
+      "type": "ms.vss-build-web.build-results-tab",
+      "targets": ["ms.vss-build-web.build-results-view"],
+      "properties": {
+        "name": "Security",
+        "uri": "build-security-tab.html",
+        "supportsTasks": ["21d06949-7f04-4bc8-b3c3-1b55379eedb6"]
+      }
+    },
+    {
+      "id": "dependency-check-task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "type": "ms.vss-distributed-task.task",
+      "properties": {
+        "name": "tasks/dependency-check"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "dist",
+      "packagePath": "/",
+      "addressable": true
+    },
+    {
+      "path": "tasks",
+      "addressable": false
+    }
+  ]
+}
