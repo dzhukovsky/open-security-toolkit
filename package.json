@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "vite --port 3000",
-    "build": "tsc -b && vite build && node esbuild.config.js",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "prepackage": "run build",
@@ -33,7 +33,6 @@
     "@types/react": "^16.8.1",
     "@types/react-dom": "^16.8.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
-    "esbuild": "^0.25.0",
     "esbuild-plugin-copy": "^2.1.1",
     "eslint": "^9.19.0",
     "eslint-plugin-react-hooks": "^5.0.0",
