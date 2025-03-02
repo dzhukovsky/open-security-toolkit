@@ -3,7 +3,7 @@
   "id": "open-security-toolkit",
   "name": "Open Security Toolkit",
   "manifestVersion": 1,
-  "version": "1.0.7",
+  "version": "1.0.8",
   "publisher": "dzhukovsky",
   "public": false,
   "author": "Dmitry Zhukovsky",
@@ -39,7 +39,7 @@
       "targets": ["ms.vss-build-web.build-results-view"],
       "properties": {
         "name": "Security",
-        "uri": "build-security-tab.html",
+        "uri": "build-security-tab/index.html",
         "supportsTasks": ["21d06949-7f04-4bc8-b3c3-1b55379eedb6"]
       }
     },

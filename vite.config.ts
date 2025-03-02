@@ -7,9 +7,12 @@ import { defineConfig } from "vite";
 export default defineConfig({
   base: "./",
   plugins: [react(), buildTasks()],
+  root: "src",
   build: {
+    outDir: "../dist",
+    emptyOutDir: true,
     rollupOptions: {
-      input: fg.sync("*.html"),
+      input: fg.sync("src/**/*.html"),
     },
   },
 });
@@ -19,7 +22,7 @@ function buildTasks() {
     name: "build-tasks",
     async closeBundle() {
       await build({
-        entryPoints: ["tasks/**/*.ts"],
+        entryPoints: ["tasks/**/index.ts"],
         bundle: true,
         platform: "node",
         outdir: "dist",
